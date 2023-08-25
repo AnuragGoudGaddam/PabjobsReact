@@ -1,0 +1,319 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.logoANdLogin{
+  justify-content: space-between;
+}
+#navBar{
+     padding: 10px;
+     
+}
+/* .Total{
+  margin: 50px;
+  border: 2px; */
+
+/* } */
+.headLogo{
+  color: #270d44;
+  margin-left: 50px;
+
+}
+.countryCode{
+
+  color: #270d44;
+}
+/* .    background-color: #fff; */
+
+.logoANdLogin{
+  padding: 20px;
+  background-color: #ffff;
+  height: 100px;
+  
+}
+#check1{
+  color: #270d44;
+  /* margin-left: 30px; */
+}
+#check2{
+  color:#270d44;
+  display: none;
+  float: right;
+  /* margin-left: 30px; */
+  /* display: none; */
+}
+.headwrite{
+  margin-top:20px ;
+  margin-right: 50px;
+}
+.loginForm{
+  background-color: #f8f2f8;
+  margin-top: 10px;
+  margin-bottom: 10px;
+ width: auto;
+
+}
+.bodySide{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+ 
+  /* margin-left: 50px; */
+  font-size: small;
+}
+.loginTop{
+  font-size:small;
+  margin: 20px;
+ text-align: center;
+ color: #270d44;
+}
+.icon{
+  font-size: 20px;
+  color: lightgreen;
+  margin: 5px;
+}
+.JobSeeker{
+  background-color: #fff;
+  color:black;
+  border-radius: 10px;
+  
+  border: none;
+  text-shadow: 2px;
+  box-shadow: 1px 1px;
+  .JobSeeker{
+  background-color: #fff;
+  color:black;
+  border-radius: 10px;
+   
+
+}
+.JobSeeker1{
+  background-color: #fff;
+  color:black;
+border-radius: 10px;     
+  border: none;
+  padding: 2px;
+  text-shadow: 2px;
+  box-shadow: 1px 1px;
+  background-color: #fff;
+  color:black;
+  border-radius: 10px;
+
+   
+
+}
+.anurag12{
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500px;
+  padding: 18px;
+  margin: 10px;
+  width: 200px;
+  background-color: #f8f2f8;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px -1px #270d44;
+  margin-left: 0.5px;
+}
+
+
+.logndRegButton{
+  align-items: self-end;
+  justify-content: space-around;
+}
+
+}
+.inputs{
+  border-radius: 10px;
+  height: 35px;
+  border-width: thin;
+  /* margin-left: 15px; */
+}
+.label1{
+  color: #270d44;
+  font-weight: bold;
+  
+ margin: 5px;
+}
+.inputs1{
+  border-radius: 10px;
+  /* width: 400px; */
+  height: 35px;
+  margin-left: 5px;
+  border-width: thin;
+}
+.countryid{
+  margin: 1px;
+  padding: 1px;
+  border-radius: 10px;
+  border-width: thin;
+  width: 55px;
+  height: 35px;
+
+}
+/* .but2{
+
+} */
+.a{
+  margin-left: 10px;
+}
+.b{
+  margin-left: 10px;
+}
+.c{
+  margin-left: 10px;
+}
+.regButton{
+  background-color: #270d44;
+  color: #fff;
+  border-radius: 10px;
+  width: 200px;
+  height: 35px;
+  text-align: center;
+}
+.p{
+  /* font-weight: lighter; */
+  font-size: small;
+}
+
+.imageDiv{
+  margin-left: 120px;
+  padding: 5px;
+  font-size: small;
+}
+
+.footemiddle{
+  
+  justify-content: space-between;
+  font-size: small;
+ 
+}
+
+.hrFooter{
+  justify-content: space-between;
+  background-attachment: fixed;
+  background-position:center;   
+  background-size:cover;
+  width: 700px;
+margin-left: 120px;
+
+}
+.Footer11{
+  color:white;
+ background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg);
+/* background-attachment: fixed;
+background-position: center;   
+background-size: cover; */
+
+}
+.buttonssss{
+ margin-left:0;
+ margin-right: 0;
+}
+.e{
+  margin-top: 15px;
+}
+@media screen and (max-width:576px) {
+  .imageDiv{display: none;}
+}
+@media screen and (max-width:300px) {
+  
+  .anurag{margin-right: none;}
+}
+.eyeIcon{
+  margin-left: 510px;
+  margin-top: -50px;
+ 
+}
+.blayer{
+  background-color:#f8f2f8;
+  
+}
+.input_1_1{
+border-radius: 2px;
+}
+.serialButtons{
+  box-shadow: 1px;
+}
+.cardCompany{
+  background-color: #f8f2f8;
+}
+.jobDetails
+{
+ display: none;
+ margin-top: -250px;
+}
+.searchs{
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px;
+}
+/* .card1{
+box-shadow: ;
+} */
+.select{
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  border:1px solid #270d44;
+  padding: 10px;
+  /* background-color: #f8f2f8; */
+}
+.select:hover{
+  background-color: #f8f2f8;
+  border: 1px solid black;
+}
+.secondCard{
+  height: max-content;
+}
+.first{
+  background-color: #f8f2f8;
+}
+.iconButtons{
+  color: #270d44; background-color: #f8f2f8; font-size: x-small;
+}
+.shadow{
+  background-color:'white';
+  color:'black';
+}
+.locationsGrid
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 25px;
+}

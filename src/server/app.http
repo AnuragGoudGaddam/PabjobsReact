@@ -1,0 +1,31 @@
+GET http://localhost:3010/
+
+###
+POST http://localhost:3010/signup/
+Content-Type: application/json
+
+{
+  "typeofreg" : "recuter11",
+   "fullname" : "Anurag",
+   "email" : "anurag111211@gmail.com",
+   "password" : "anurag123111",
+   " mobilenumber" : 7093041041,
+   " gender":"male"
+   
+}
+
+
+
+###
+POST http://localhost:3010/profile/
+Content-Type: application/json
+
+{
+  "fullname1" :"Suneel",
+   "state1": "Telangana",
+  "currentLocation1":"Hyderabad",
+    "mobile1":"7567890088",
+    "email1":"suneel@mail.com"
+   
+}
+
