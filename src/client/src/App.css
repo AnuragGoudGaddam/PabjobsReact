@@ -91,7 +91,7 @@
 }
 .bodySide{
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px;
  
   /* margin-left: 50px; */
@@ -160,11 +160,11 @@ border-radius: 10px;
 }
 
 }
-.inputs{
-  border-radius: 10px;
-  height: 35px;
-  border-width: thin;
-  /* margin-left: 15px; */
+.inputs12333{
+  border: none;
+}
+.inputs12333:focus{
+  border:none;
 }
 .label1{
   color: #270d44;
@@ -211,6 +211,20 @@ border-radius: 10px;
 .p{
   /* font-weight: lighter; */
   font-size: small;
+}
+.form-control:focus {
+  color: var(--bs-body-color);
+  /* background-color: var(--bs-body-bg); */
+  border-color: #86b7fe;
+  outline: 0;
+  /* box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25); */
+}
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  /* border-color: #86b7fe; */
+  /* outline: 0; */
+  /* box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25); */
 }
 
 .imageDiv{
@@ -311,9 +325,41 @@ box-shadow: ;
   background-color:'white';
   color:'black';
 }
+.reactloginbtn{
+  color: #270d44;
+}
 .locationsGrid
 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 25px;
+}
+.button1{
+  background-color: rgb(241, 241, 48);
+  color: #fff;
+  font-size: x-large;
+
+}
+.resume{
+  font-weight: bold;
+}
+.resumeUpload{
+  border: 1px dashed black;
+}
+.card1{
+  border-radius: 10px;
+}
+.headderimg{
+  margin-left: 300px;
+  width: 100px;
+}
+li{
+  list-style-type: none;
+}
+.reactloginbtn1{
+  transition: opacity 0.1s;
+  font-weight: bold;
+}
+.inactive{
+  opacity: 0.4;
 }

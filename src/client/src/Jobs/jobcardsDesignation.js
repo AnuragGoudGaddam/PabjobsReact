@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import BrowseJobs from "../browseJobsApi";
 
 
 const JobApiEXP = () => {
@@ -95,9 +94,9 @@ const JobApiEXP = () => {
 
     }
 
-const handleClick=() =>{
-    navigate("/browsejobs",{state:{location:selectloc}})
-}
+    const handleClick = () => {
+        navigate("/browsejobs", { state: { location: selectloc } })
+    }
 
 
     return (
@@ -242,40 +241,41 @@ const handleClick=() =>{
             </div>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-5'></div>
-                
-                            {selectloc.length > 0 ? (
-                                selectloc.map((locations, index) => (
+                    <div className="col-md-5"></div>
+                    <div className='col-md-5'>
 
-                                    <div className="selectedLocations m-2 d-flex" key={index}>
+                        {selectloc.length > 0 ? (
+                            selectloc.map((locations, index) => (
 
-                                        <h6>{locations}</h6>
-                                        
-                                    </div>
-                                   
-                                    
+                                <div className="selectedLocations m-2 d-flex" key={index}>
 
-                                ))
-                            ) : (
-                                <div className="noJobFound "></div>
-                                
-                            )
-                            
-                            }
-                             {selectloc.length > 0 ? (
-                                <div onClick={handleClick}>
-                                    <h6>filter<i className="fa fa-search ml-1"></i></h6>
-                                    </div>
-                            ) :(
+                                    <h6>{locations}</h6>
 
-                                <div className="noJobFound "></div>
-                            )
+                                </div>
 
-                            }
-                          
+
+
+                            ))
+                        ) : (
+                            <div className="noJobFound "></div>
+
+                        )
+
+                        }
+                        {selectloc.length > 0 ? (
+                            <div onClick={handleClick}>
+                                <h6>filter<i className="fa fa-search ml-1"></i></h6>
+                            </div>
+                        ) : (
+
+                            <div className="noJobFound "></div>
+                        )
+
+                        }
+                    </div>
                 </div>
             </div>
-                            
+
 
             <div className="container">
                 <div className="row">

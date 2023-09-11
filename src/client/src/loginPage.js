@@ -40,13 +40,13 @@ const LoginPage = () => {
             password !== ""
         ) {
             axios
-                .post("https://pab-server-testing.onrender.com/auth/login", usersData)
+                .post("http://localhost:3010/login/", usersData)
                 .then((response) => {
                     setdata(response.data);
 
                     console.log(response.data)
                     if (response.status === 200) {
-                        localStorage.setItem("token",response.data.token)
+                        localStorage.setItem("token", response.data.token)
                         console.log(response.data.token);
 
                         toast.success("Registration Successfull", {
@@ -62,7 +62,7 @@ const LoginPage = () => {
 
 
                         setTimeout(function () {
-                            navigate('/browsejobs')
+                            navigate('/home')
                         }, 3000)
 
                     }
@@ -81,8 +81,16 @@ const LoginPage = () => {
 
     return (
         <div>
-            <Header />
-            <div className="p-4 loginForm  d-flex flex-row">
+            <div className="container">
+                <div className="row">
+                    <div className="col-2"></div>
+                    <div className="col-5">
+                        <img className="col-md-2 col-6" src="https://play-lh.googleusercontent.com/73eFZhQXdDIiomGikoBpa-XZZf9-_1gkxrpoTFDZ0XzGMzEP0jcR09CC0Ma7UwSwgeDN" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="p-2 loginForm ">
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
@@ -102,61 +110,68 @@ const LoginPage = () => {
                     <div className=" col-12 col-md-5 bodySide " >
 
 
-                        <div className="labels1">
-                            <div className=" maincard">
-                                <div className=" maincard1">
-                                    <h1 className="container2heading">Create an account</h1>
-                                    <p className="container2para">it only takes a couple of minutes to get started!</p>
+                        <div className="container">
+                            <div className="row">
+                                <div className="row">
+                                    <div className="col-md-3"></div>
+                                    <div className="col-md-9">
+                                        <h1 className="container2heading px-3" >Login</h1>
+                                        <p className="container2para" style={{ color: "blue" }}>it only takes a couple of minutes to get started!</p>
 
-                                    <p>Dont have an account  <Link to="/register"> <span style={{ color: "blue" }} >SignIn</span> </Link> </p>
-
-                                    <form onSubmit={onSubmitForm}>
-
-                                        <label className="label1">Email ID</label><br />
-                                        <input className="inputs form-control" type="email" placeholder="Enter your Emailid" id="email" onChange={(e) => setemail(e.target.value)} /><br />
-                                        <label className="label1">Passsword</label><br />
-                                        <input className="inputs form-control" type="password" placeholder="*****" id="password" onChange={(e) => setpassword(e.target.value)} /><br />
-                                        <p style={{ textAlign: "center", color: "blue" }}>Login Via Otp</p>
-                                        <button className="btn mt-2" style={{ border: "1px solid black", marginLeft: "190px" }} >Login</button>
-                                    </form>
-                                    <div>
-                                        <div class="row mt-2">
-                                            <div class="col-md-4 mb-2"></div>
-                                            <button class=" col-md-5 col-12"
-                                                // style=" border-radius: 10px;background-color: #fff;" st >
-                                                style={{ borderRadius: "10px", backgroundColor: "#ffff",marginRight:"-40px" }}   >
-                                                <i class="fa-brands fa-google p-1 "></i> Sign in with Google</button>
-                                        </div>
+                                        <p >Dont have an account  <Link to="/register"> <span style={{ color: "blue" }} >Signup</span> </Link> </p>
                                     </div>
-
-
                                 </div>
+
+                                <form onSubmit={onSubmitForm}>
+
+                                    <div> <label className="label1">Email ID</label> </div>
+                                    <input className="inputs form-control" type="email" style={{ border: '1px solid #270d44', borderRadius: '10px' }} placeholder="Enter your Emailid" id="email" onChange={(e) => setemail(e.target.value)} /><br />
+                                    <div><label className="label1">Passsword</label></div>
+                                     <input
+                                        type="password"
+                                        className='form-control'
+                                        style={{ border: "1px solid #270d44" }}
+                                        placeholder="Enter your password"
+                                        id="password"
+                                        onChange={(e) => setpassword(e.target.value)}
+                                        value={password}
+                                    />
+
+
+                                    <button className="btn mt-2 form-control" style={{ border: "px solid black", color: "white", backgroundColor: "#270d44" }} >Login</button>
+                                    <p className="mt-2" style={{ textAlign: "center", color: "blue" }}>Login Via Otp</p>
+                                </form>
+                                <div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-3 mb-2"></div>
+                                        <button class="  col-md-6 col-12 btn "
+                                            // style=" border-radius: 10px;background-color: #fff;" st >
+                                            style={{ borderRadius: "10px", backgroundColor: "#ffff" }}   >
+                                            <i class="fa-brands fa-google  " style={{ color: '#3cba54' }}  ></i> Sign in with Google</button>
+                                    </div>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
-
-
-                    <div class=" col-md-2 p-1 imageDiv d-none d-md-block ">
-                        <div class="row">
-                            <div> <img id="image1"
-                                src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7962.jpg?w=2000"
-                                width="300px" height="300" style={{ borderRadius: "10px" }} /> </div>
-                            <div className="col-12">
-                                <div className="e d-flex flex-row"> <i style={{ marginTop: " 2px" }}
-                                    className="fa-solid fa-circle-check"></i>
-                                    <p style={{ marginLeft: " 20px" }}>Build your profile and let recutries find you
-                                    </p>
-                                </div>
-                                <div className="e d-flex flex-row"><i style={{ marginTop: " 2px" }} className="fa-solid fa-circle-check"></i>
-                                    <p style={{ marginLeft: " 20px" }}>Get job posting deliverd right to your email</p>
-                                </div>
-                                <div className="e d-flex flex-row"> <i style={{ marginTop: " 2px" }}
-                                    className="fa-solid fa-circle-check"></i>
-                                    <p style={{ marginLeft: " 20px" }}>Find a job and grow your career</p>
-                                </div>
+                    <div className="col-md-1"></div>
+                    <div className="col-md-4 d-none d-md-block">
+                        <div class=" col-12 col-md-8 ">
+                            <div class=" card1 shadow" >
+                                <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7962.jpg?w=2000"
+                                    width="300px" height="220px" alt="" id="image" style={{ borderRadius: '20px' }} />
                             </div>
                         </div>
+                        <div class="card1para col-12 mt-2">
+                            <i class="fa-solid fa-circle-check m-2 jan"></i> <span class="iconpara">Build your profile and let recutries find you</span> <br />
+                            <i class="fa-solid fa-circle-check m-2 jan"></i> <span class="iconpara">Get job posting deliverd right to your email</span> <br />
+                            <i class="fa-solid fa-circle-check m-2 jan"></i> <span class="iconpara"> Find a job and grow your career</span>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
             <Footer />

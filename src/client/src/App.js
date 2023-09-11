@@ -22,6 +22,11 @@ import JobApiEXP from './Jobs/jobsWithApiEXP';
 import JobsByLocation from './Jobs/jobsbylocation';
 import JobsByCompany from  './Jobs/jobcardsCompany.js'
 import CandateProfile from './profile/candateprofile';
+import ResumeProfile from './profile/resumeProfile';
+import RecuriterCreation from './recuriter';
+import RecruitersLoginPage from './recuterlogin';
+import Recuriter from './recuriternxt';
+
 
 // import JobsByCompany from './Jobs/jobcardsCompany';
 function App() {
@@ -44,6 +49,14 @@ function App() {
         <Route exact path='/jobsbyskills' element={<JobsBySkills/>}/>
         <Route exact path='/jobsbyEXP' element={<JobApiEXP/>}/>
         <Route exact path='/profile' element={<CandateProfile/>}/>
+        <Route exact path='/Resume' element={<ResumeProfile/>}/>
+        <Route exact path='/recuriter' element={<RecuriterCreation/>}/>
+        <Route exact path='/recuriter123' element={<RecruitersLoginPage/>}/>
+        <Route exact path='/recuriternxt' element={<Recuriter/>}/>
+
+        
+
+      
      </Routes>
     
   

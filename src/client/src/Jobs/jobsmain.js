@@ -23,6 +23,7 @@ const JobsMain = () => {
                             <div class="col-4"> </div>
                         </div>
                         <div className="row" >
+                            <div className="col-1"> </div>
                             <div className="col-md-4 col-12 d-flex flex-row m-3 "
                                 style={{ backgroundColor: 'white', height: '40px', width: '320px', borderRadius: '10px', marginLeft: '150px' }}>
                                 <span class="px-1 mt-1"> <i class="fa-solid fa-location-dot"></i> </span>

@@ -1,17 +1,51 @@
 GET http://localhost:3010/
 
 ###
-POST http://localhost:3010/signup/
+POST http://localhost:3010/jobseeker/
 Content-Type: application/json
 
 {
-  "typeofreg" : "recuter11",
-   "fullname" : "Anurag",
-   "email" : "anurag111211@gmail.com",
+  # "type" : "recuter11",
+   "name" : "Suneel",
+   "email" : "suneel123@gmail.com",
+    "contactNumber":  7093041041,
    "password" : "anurag123111",
-   " mobilenumber" : 7093041041,
-   " gender":"male"
+   "confirmpassword" : "anurag123111"
    
+}
+
+###
+POST http://localhost:3010/recuriter/
+Content-Type: application/json
+
+{
+  # "type" : "recuter11",
+   "name" : "Suneel",
+   "email1" : "suneel123@gmail.com",
+    "contactNumber":  7093041041,
+   "password" : "anurag123111",
+   "confirmpassword" : "anurag123111"
+   
+}
+
+
+
+###
+POST http://localhost:3010/login/
+Content-Type: application/json
+
+{
+    "email" : "suneel123@gmail.com",
+     "password" : "anurag123111"
+}
+
+###
+POST http://localhost:3010/login/
+Content-Type: application/json
+
+{
+    "email1" : "suneel123@gmail.com",
+     "password" : "anurag123111"
 }
 
 
@@ -25,7 +59,7 @@ Content-Type: application/json
    "state1": "Telangana",
   "currentLocation1":"Hyderabad",
     "mobile1":"7567890088",
-    "email1":"suneel@mail.com"
+    "email1":"suneel1221321@mail.com"
    
 }
 

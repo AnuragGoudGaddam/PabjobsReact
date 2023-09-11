@@ -5,8 +5,8 @@ const Header = () => {
     return (
         <div className="container shadow " >
             <div className="row">
-                <div className="col-1"></div>
-                <div className="col-11 ">
+                <div className="col-2"></div>
+                <div className="col-10 ">
 
 
                     <nav class="navbar navbar-expand-sm ">
@@ -22,7 +22,7 @@ const Header = () => {
                                 <div style={{ marginLeft: "30px" }}>
                                     <ul className="navbar-nav" style={{ fontWeight: "800", color: "#270d44" }}>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="" onClick={() => navigate = ("/home")} style={{ fontWeight: "bold " }}>Home</a>
+                                            <a className="nav-link" href="/home"  style={{ fontWeight: "bold " }}>Home</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -58,8 +58,8 @@ const Header = () => {
                                 </div>
                                 <div> <i className="fa-regular fa-bell"
                                     style={{ fontSize: "xx-large", marginLeft: "20px", color: "#270d44" }}></i></div>
-                                <div style={{ marginLeft: "20px", fontSize: "xx-large", color: " #270d44" }}> <i
-                                    className="fa-sharp fa-solid fa-circle-user"></i>
+                                <div style={{ marginLeft: "20px", fontSize: "xx-large", color: " #270d44" }}> <a className='' href='/profile'>  <i
+                                    className="fa-sharp fa-solid fa-circle-user"></i> </a>
                                     <i className="fa-solid fa-caret-down"></i>
                                 </div>
                             </div>
