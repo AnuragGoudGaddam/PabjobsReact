@@ -160,7 +160,7 @@ const RecruitersLoginPage = () => {
                     <div className="col-md-4 d-none d-md-block">
                         <div class=" col-12 col-md-8 ">
                             <div class=" card1 shadow" >
-                                <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7962.jpg?w=2000"
+                                <img src="https://static.vecteezy.com/system/resources/previews/005/879/539/non_2x/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg"
                                     width="300px" height="220px" alt="" id="image" style={{ borderRadius: '20px' }} />
                             </div>
                         </div>

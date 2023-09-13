@@ -32,23 +32,7 @@ function BrowseJObs(props) {
         fetchblogs()
     }, [])
 
-    // const fetchblogs = async () => {
-    //     const api = "https://pab-server-testing.onrender.com/api/jobs";
-    //     const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGRjYjJhZWI0Zjc5NDE0MTJlMGQ1NTciLCJpYXQiOjE2OTIyMDMwODB9.i_zfqEWwRqxVCpiT2dVPkIhjQanQu6SarnKNyGS_9Io';
-    //     try {
-    //         const response = await axios.get(api, {
-    //             headers: {
-    //                 Authorization: `Bearer ${authToken}`
-    //             }
-    //         });
-    //         setblogslist(response.data);
-    //         console.log("hello");clien
-    //         console.log(response.data, "rest");
 
-    //     } catch (error) {
-    //         console.error("Error fetching blogs:", error);
-    //     }
-    // };
 
     const fetchblogs = async () => {
         const api = "https://pab-server-testing.onrender.com/api/jobs";
@@ -83,9 +67,7 @@ function BrowseJObs(props) {
             blog?.skillsets && blog?.skillsets.some(eachSkill =>
                 eachSkill?.toLowerCase().includes(userSkill?.toLowerCase().trim())) &&
             blog?.cities && blog?.cities.some(eachcity =>
-                eachcity?.toLowerCase().includes(userCity?.toLowerCase().trim())
-
-            )
+                eachcity?.toLowerCase().includes(userCity?.toLowerCase().trim()))
         );
         setblogslistFData(filteredJobs);
     };

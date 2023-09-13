@@ -53,8 +53,9 @@ function App() {
         <Route exact path='/recuriter' element={<RecuriterCreation/>}/>
         <Route exact path='/recuriter123' element={<RecruitersLoginPage/>}/>
         <Route exact path='/recuriternxt' element={<Recuriter/>}/>
-
         
+        <Route exact path='/rec123' element={<ResumeProfile/>}/>
+
 
       
      </Routes>

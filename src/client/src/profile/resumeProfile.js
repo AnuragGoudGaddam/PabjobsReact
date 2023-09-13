@@ -1,6 +1,4 @@
 import React from "react";
-
-
 const ResumeProfile = () => {
     return (
         <div>
@@ -20,7 +18,6 @@ const ResumeProfile = () => {
                                 </div>
 
                             </div>
-
                             <p>9786465763</p>
                             <p>anurag7093@gmail.com</p>
                             <p>3 years</p>
@@ -42,7 +39,6 @@ const ResumeProfile = () => {
                                 <div className="col-8" style={{ fontSize: 'small' }}><p>Profile Last Updated-june5th 2023</p></div>
                             </div>
                         </div>
-
                         <div className="mt-1"> <button className="form-control">Resume</button></div>
                         <div className="mt-1"> <button className="form-control">Resume Headline</button></div>
                         <div className="mt-1"> <button className="form-control">Profile Summary</button></div>
@@ -53,11 +49,9 @@ const ResumeProfile = () => {
                         <div className="mt-1"> <button className="form-control"> Accomplishment</button></div>
                         <div className="mt-1"> <button className="form-control"> Desired Career </button></div>
                         <div className="mt-1"> <button className="form-control"> Desired Career </button></div>
-
-
-                    </div> 
+                    </div>
                     <div className="col-md-6">
-                        <div className="col-12 card"> 
+                        <div className="col-12 card">
                             <p><span style={{ fontWeight: "bold" }}>Resume  </span>(Recruiters generally do not look at profile without resumes.)</p>
                             <div className="row resumeUpload">
                                 <div className="col-md-4"></div>
@@ -71,13 +65,40 @@ const ResumeProfile = () => {
 
                             </div>
                         </div>
+                        <div class="container mt-3">
+                            <h3>Modal Example</h3>
+                            <p>Click on the button to open the modal.</p>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                                Open modal
+                            </button>
+                        </div>
+
+
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Modal Heading</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+                                        Modal body..
+                                    </div>
+
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-
-
                 </div>
-
             </div>
         </div>
     )

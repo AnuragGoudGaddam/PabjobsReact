@@ -44,7 +44,7 @@ const AccountCreation = () => {
     };
 
 
-
+ 
     let navigate = useNavigate();
     const [data, setdata] = useState([]);
 

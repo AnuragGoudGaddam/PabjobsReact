@@ -148,7 +148,7 @@ const RecuriterCreation= () => {
                                 <div className="col-1"></div>
 
                                 <div className="col-md-5">
-                                    <a href="/"><button className="form-control reactloginbtn shadow mx-1  ">Login</button></a></div>
+                                    <a href="/recuriter123"><button className="form-control reactloginbtn shadow mx-1  ">Login</button></a></div>
 
                                 <div className="col-md-5">   <button className="col-md-5 form-control reactloginbtn shadow  px-4">Signup<i class="fa-solid fa-circle-check  " style={{ marginLeft: '50px' }}  ></i></button> </div>
 
@@ -266,7 +266,7 @@ const RecuriterCreation= () => {
                     <div className="col-md-4 mt-5  d-none d-md-block" >
                         <div class=" col-12 col-md-8 ">
                             <div class="card card1 shadow" >
-                                <img src="https://img.freepik.com/premium-vector/online-registration-sign-up-with-man-sitting-near-smartphone_268404-95.jpg"
+                                <img src="https://img.freepik.com/premium-vector/my-order-list-flat-style-illustration-design_538610-623.jpg"
                                     width="280px" height="220px" alt="" id="image" style={{ borderRadius: '20px' }} />
                             </div>
                         </div>
