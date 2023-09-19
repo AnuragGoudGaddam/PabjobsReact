@@ -115,7 +115,7 @@ const RecruitersLoginPage = () => {
                                 <div className="row">
                                     <div className="col-md-3"></div>
                                     <div className="col-md-9">
-                                        <h1 className="container2heading px-3" >Login</h1>
+                                        <h1 className="container2heading px-3" >Recruiters Login</h1>
                                         <p className="container2para" style={{ color: "blue" }}>it only takes a couple of minutes to get started!</p>
 
                                         <p >Dont have an account  <Link to="/register"> <span style={{ color: "blue" }} >Signup</span> </Link> </p>

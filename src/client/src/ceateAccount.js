@@ -44,7 +44,7 @@ const AccountCreation = () => {
     };
 
 
- 
+
     let navigate = useNavigate();
     const [data, setdata] = useState([]);
 
@@ -128,6 +128,14 @@ const AccountCreation = () => {
 
     return (
         <div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-1 p-3"></div>
+                    <div className="col-5">
+                        <img className="col-md-2 col-6" src="https://play-lh.googleusercontent.com/73eFZhQXdDIiomGikoBpa-XZZf9-_1gkxrpoTFDZ0XzGMzEP0jcR09CC0Ma7UwSwgeDN" />
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -136,33 +144,42 @@ const AccountCreation = () => {
 
 
                 <div className="row">
+
+
                     <div className="col-12"></div>
                     <div className="col-md-1" ></div>
                     <div className="col-12 col-md-6" >
-                        <div className="card shadow mt-5 logincard" style={{ borderRadius: '20px' }}>
+                        <div className="card shadow  logincard" style={{ borderRadius: '20px' }}>
                             <div className="col-12 text-center">
                                 <h2>Create an account</h2>
                                 <p className="parastart">it only takes a couple of minutes to get started!</p>
                             </div>
-                            <div className=" text-center reactbtngroup row">
-                                <div className="col-1"></div>
+                            <div className="container"> 
+                                <div className=" text-center reactbtngroup row">
+                                    <div className="col-1"></div>
 
-                                <div className="col-md-5">
-                                    <a href="/"><button className="form-control reactloginbtn shadow mx-1  ">Login</button></a></div>
+                                    <div className="col-md-5">
+                                        <a href="/"><button className="form-control reactloginbtn shadow mx-1  ">Login</button></a></div>
 
-                                <div className="col-md-5">   <button className="col-md-5 form-control reactloginbtn shadow  px-4">Signup<i class="fa-solid fa-circle-check  " style={{ marginLeft: '50px' }}  ></i></button> </div>
+                                    <div className="col-md-5">   <button className="col-md-5 form-control reactloginbtn shadow  px-4">Signup<i class="fa-solid fa-circle-check  " style={{ marginLeft: '50px' }}  ></i></button> </div>
 
-                            </div>
-                            <div className=" text-center reactbtngroup  row mt-2">
-                                <div className="col-1"></div>
+                                </div>
 
-                                {/* <div style={{ color: '#270d44' }}  > <button className={`col-12 col-md-5  reactloginbtn1 shadow btn ${type === 'applicant'? '':'ina  ctive'}` } >Job seekers<input type="radio" name="type" value="applicant" onChange={((e) => settype(e.target.value))} style={{ marginLeft: '50px' }}  ></input></button>
+
+                                <div className=" text-center reactbtngroup  row ">
+                                    {/* <div className="col-1"></div> */}
+
+                                    {/* <div style={{ color: '#270d44' }}  > <button className={`col-12 col-md-5  reactloginbtn1 shadow btn ${type === 'applicant'? '':'ina  ctive'}` } >Job seekers<input type="radio" name="type" value="applicant" onChange={((e) => settype(e.target.value))} style={{ marginLeft: '50px' }}  ></input></button>
                                   <button className={`col-12 col-md-5  reactloginbtn1 shadow btn ${type === 'recruiter'? '':'inactive'}`} >Recruiters <input type="radio" name="type" value="recruiter" onChange={((e) => settype(e.target.value))} style={{ marginLeft: '50px' }} ></input></button>   </div> */}
-                                <div   > <button className={`col-12 col-md-5   shadow btn`} style={{ color: '#270d44',fontWeight:'bold' }} >Job seekers<input type="radio" name="type" value="applicant" style={{ marginLeft: '50px' }} checked  ></input></button>
-                                    <a href="recuriter">  <button className={`col-12 col-md-5   shadow btn `} >Recruiters <input type="radio" name="type" value="recruiter" style={{ marginLeft: '50px' }} ></input></button>  </a> </div>
+                                    <div className="mt-3 ">
+                                        <button className={`col-12 col-md-5 shadow   btn `} style={{ color: '#270d44', fontWeight: 'bold', borderRadius: "10px", width: '-10px' }} >Job seekers<input type="radio" name="type" value="applicant" style={{ marginLeft: '50px' }} checked  ></input></button>
+                                        <a href="recuriter">  <button className={`col-12 col-md-5  shadow  btn `} style={{ borderRadius: "10px", marginLeft: '-4px', border: 'none' }} >Recruiters <input type="radio" name="type" value="recruiter" style={{ marginLeft: '50px' }} ></input></button>  </a>
+                                    </div>
 
 
+                                </div>
                             </div>
+
 
                             <ToastContainer
                                 position="top-right"
@@ -187,13 +204,13 @@ const AccountCreation = () => {
 
                                 <label for="" id="fullname" class="loginlabel"> Fullname </label>
 
-                                <input type="text" class=" form-control" style={{ border: '1px solid #270d44' }} placeholder="Enter your full name" id="input" onChange={(e) => setname(e.target.value)} value={name} />
+                                <input type="text" class=" form-control" style={{ border: '1px solid #270d44', borderRadius: "16px" }} placeholder="Enter your full name" id="input" onChange={(e) => setname(e.target.value)} value={name} />
 
 
 
 
                                 <label for="" class="loginlabel" >Email ID</label>
-                                <input type="email" class="form-control " style={{ border: '1px solid #270d44' }} placeholder="enter your Email ID" id="input" onChange={(e) => setemail(e.target.value)} value={email} />
+                                <input type="email" class="form-control " style={{ border: '1px solid #270d44', borderRadius: "16px" }} placeholder="enter your Email ID" id="input" onChange={(e) => setemail(e.target.value)} value={email} />
 
                                 <label htmlFor="contactNumber" className="loginlabel">
                                     Mobile Number
@@ -211,7 +228,7 @@ const AccountCreation = () => {
                                         type="text"
                                         className={`form-control ${contactNumberError && contactNumber.length !== 10 ? "is-invalid" : ""
                                             }`}
-                                        style={{ border: "1px solid #270d44" }}
+                                        style={{ border: "1px solid #270d44", borderRadius: "16px" }}
                                         placeholder="Enter your mobile number"
                                         id="contactNumber"
                                         onChange={(e) =>
@@ -243,7 +260,7 @@ const AccountCreation = () => {
                                     type="password"
                                     className={`form-control ${passwordError ? "is-invalid" : ""
                                         }`}
-                                    style={{ border: "1px solid #270d44" }}
+                                    style={{ border: "1px solid #270d44", borderRadius: "16px" }}
                                     placeholder="Enter your password"
                                     id="password"
                                     onChange={(e) => setPassword(e.target.value)}
@@ -263,7 +280,7 @@ const AccountCreation = () => {
                                     type="password"
                                     className={`form-control ${passwordError ? "is-invalid" : ""
                                         }`}
-                                    style={{ border: "1px solid #270d44" }}
+                                    style={{ border: "1px solid #270d44", borderRadius: "16px" }}
                                     placeholder="Enter your password"
                                     id="password"
                                     onChange={(e) => setconfirmpassword(e.target.value)}
@@ -276,7 +293,7 @@ const AccountCreation = () => {
 
                     </div>
                     <div className="col-12 col-md-1"></div>
-                    <div className="col-md-4 mt-5  d-none d-md-block" >
+                    <div className="col-md-4 mt-2  d-none d-md-block" >
                         <div class=" col-12 col-md-8 ">
                             <div class="card card1 shadow" >
                                 <img src="https://img.freepik.com/premium-vector/online-registration-sign-up-with-man-sitting-near-smartphone_268404-95.jpg"

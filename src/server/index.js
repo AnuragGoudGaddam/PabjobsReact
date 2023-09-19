@@ -5,7 +5,8 @@ const userData = require("./mongoose")
 const profileData = require("./mongoose")
 const middleware = require('./middleware')
 const jwt=require('jsonwebtoken')
-const bcrypt=require('bcrypt')
+const bcrypt=require('bcrypt');
+const resumeData = require("./scemap");
 
 const app = express();
 app.use(express.json())
@@ -237,8 +238,148 @@ app.post("/login", async (req, res) => {
 //     }
 // });
 
+// resume headline 1
+
+app.post ("/headline" ,middleware, async(req,res) =>{
+    try {
+        const {resumeheadline} = req.body
+
+        let newUser= new resumeData({
+            resumeheadline : resumeheadline,
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({resumeheadline:resumeheadline})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
 
 
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+
+
+
+app.post ("/summery" ,middleware, async(req,res) =>{
+    try {
+        const {profileSummery} = req.body
+
+        let newUser= new resumeData({
+            profileSummery : profileSummery,
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({profileSummery:profileSummery})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+
+app.post ("/keyskill" ,middleware, async(req,res) =>{
+    try {
+        const {keyskill} = req.body
+
+        let newUser= new resumeData({
+            keyskill : keyskill,
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({keyskill:keyskill})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+app.post ("/uiandux" ,middleware, async(req,res) =>{
+    try {
+        const {uitotalEXp,uifromdate,describeJob,currentCTC,uitilldate} = req.body
+
+        let newUser= new resumeData({
+            uitotalEXp :uitotalEXp,
+            uifromdate: uifromdate,
+            describeJob: describeJob,
+            currentCTC :currentCTC,
+            uitilldate : uitilldate
+        }
+
+        )
+        // const isUserExit= await resumeData.findOne({uitotalEXp:uitotalEXp})
+
+        // if (isUserExit) {
+        //     return res.send("user already registered")
+            
+        // }
+      
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+app.post ("/education" ,middleware, async(req,res) =>{
+    try {
+        const {educationDegree,university,educationyear} = req.body
+
+        let newUser= new resumeData({
+            educationDegree :educationDegree,
+            university: university,
+            educationyear: educationyear,
+        }
+
+        )
+        // const isUserExit= await resumeData.findOne({uitotalEXp:uitotalEXp})
+
+        // if (isUserExit) {
+        //     return res.send("user already registered")
+            
+        // }
+      
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
 
 
 

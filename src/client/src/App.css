@@ -345,6 +345,13 @@ box-shadow: ;
 }
 .resumeUpload{
   border: 1px dashed black;
+  /* --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y)); */
+  /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+  /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
 }
 .card1{
   border-radius: 10px;
@@ -356,10 +363,22 @@ box-shadow: ;
 li{
   list-style-type: none;
 }
+
+
 .reactloginbtn1{
   transition: opacity 0.1s;
   font-weight: bold;
 }
 .inactive{
   opacity: 0.4;
+}
+.buttonsinResume{
+  margin: 4px;
+  background-color: #f2eaf2;
+  border-radius: 10px;
+  
+}
+.onebutton{
+  margin: 3px;
+  
 }

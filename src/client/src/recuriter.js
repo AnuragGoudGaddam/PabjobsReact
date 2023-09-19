@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./headder";
 import Footer from "./footer";
 
-const RecuriterCreation= () => {
+const RecuriterCreation = () => {
     // const [type, settype] = useState("applicant")
 
     const [name, setname] = useState("");
@@ -28,12 +28,12 @@ const RecuriterCreation= () => {
             setContactNumberError("");
             return false; // Return false to indicate invalid input
         }
-        
+
         const isValid = /^[6-9]\d{9}$/.test(value);
         setContactNumberError(isValid ? "" : "Please enter 10 numbers");
         return isValid;
     };
-    
+
 
 
     const validatePassword = (value) => {
@@ -128,6 +128,15 @@ const RecuriterCreation= () => {
 
     return (
         <div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-1 p-3"></div>
+                    <div className="col-5">
+                        <img className="col-md-2 col-6" src="https://play-lh.googleusercontent.com/73eFZhQXdDIiomGikoBpa-XZZf9-_1gkxrpoTFDZ0XzGMzEP0jcR09CC0Ma7UwSwgeDN" />
+                    </div>
+                </div>
+            </div>
+
 
 
 
@@ -139,25 +148,27 @@ const RecuriterCreation= () => {
                     <div className="col-12"></div>
                     <div className="col-md-1" ></div>
                     <div className="col-12 col-md-6" >
-                        <div className="card shadow mt-5 logincard" style={{ borderRadius: '20px' }}>
+                        <div className="card shadow  logincard" style={{ borderRadius: '20px' }}>
                             <div className="col-12 text-center">
                                 <h2>Create an account</h2>
                                 <p className="parastart">it only takes a couple of minutes to get started!</p>
                             </div>
-                            <div className=" text-center reactbtngroup row">
-                                <div className="col-1"></div>
+                            <div className="container">
+                                <div className=" text-center reactbtngroup row">
+                                    <div className="col-1"></div>
 
-                                <div className="col-md-5">
-                                    <a href="/recuriter123"><button className="form-control reactloginbtn shadow mx-1  ">Login</button></a></div>
+                                    <div className="col-md-5">
+                                        <a href="/recuriter123"><button className="form-control reactloginbtn shadow mx-1  ">Login</button></a></div>
 
-                                <div className="col-md-5">   <button className="col-md-5 form-control reactloginbtn shadow  px-4">Signup<i class="fa-solid fa-circle-check  " style={{ marginLeft: '50px' }}  ></i></button> </div>
+                                    <div className="col-md-5">   <button className="col-md-5 form-control reactloginbtn shadow  px-4">Signup<i class="fa-solid fa-circle-check  " style={{ marginLeft: '50px' }}  ></i></button> </div>
 
-                            </div>
-                            <div className=" text-center reactbtngroup  row mt-2">
-                                <div className="col-1"></div>
+                                </div>
+                                <div className=" text-center reactbtngroup  row ">
+                                    <div className="col-1"></div>
 
-                                <div   > <a href="register"><button className={`col-12 col-md-5   shadow btn `} >Job seekers<input type="radio" name="type" value="applicant"   style={{ marginLeft: '50px' }}  ></input></button></a>
-                                    <button  style={{ color: '#270d44',fontWeight:'bold' }} className={`col-12 col-md-5   shadow btn `} >Recruiters <input type="radio" name="type" value="recruiter"   style={{ marginLeft: '50px' }} checked ></input></button> </div>
+                                    <div className="mt-3"   > <a href="register"><button className={`col-12 col-md-5   shadow btn `} style={{ borderRadius: '10px' }} >Job seekers<input type="radio" name="type" value="applicant" style={{ marginLeft: '50px' }}  ></input></button></a>
+                                        <button style={{ color: '#270d44', fontWeight: 'bold', borderRadius: '10px' }} className={`col-12 col-md-5   shadow btn `} >Recruiters <input type="radio" name="type" value="recruiter" style={{ marginLeft: '50px' }} checked ></input></button> </div>
+                                </div>
                             </div>
 
                             <ToastContainer
@@ -177,10 +188,10 @@ const RecuriterCreation= () => {
                             <form class="form p-5" onSubmit={onSubmitForm}>
 
                                 <label for="" id="fullname" class="loginlabel">Company Name</label>
-                                <input type="text" class=" form-control" style={{ border: '1px solid #270d44' }} placeholder="Enter Company Name " id="input" onChange={(e) => setname(e.target.value)} value={name} />
+                                <input type="text" class=" form-control" style={{ border: '1px solid #270d44', borderRadius: "16px" }} placeholder="Enter Company Name " id="input" onChange={(e) => setname(e.target.value)} value={name} />
 
                                 <label for="" class="loginlabel" >Email ID</label>
-                                <input type="email1" class="form-control " style={{ border: '1px solid #270d44' }} placeholder="enter your Email ID" id="input" onChange={(e) => setemail1(e.target.value)} value={email1} />
+                                <input type="email1" class="form-control " style={{ border: '1px solid #270d44', borderRadius: "16px" }} placeholder="enter your Email ID" id="input" onChange={(e) => setemail1(e.target.value)} value={email1} />
 
                                 <label htmlFor="contactNumber" className="loginlabel">
                                     Mobile Number
@@ -196,9 +207,9 @@ const RecuriterCreation= () => {
                                     </select>
                                     <input
                                         type="text"
-                                        className={`form-control ${contactNumberError && contactNumber.length !== 10 ? "is-invalid": ""
+                                        className={`form-control ${contactNumberError && contactNumber.length !== 10 ? "is-invalid" : ""
                                             }`}
-                                        style={{ border: "1px solid #270d44" }}
+                                        style={{ border: "1px solid #270d44", borderRadius: "16px" }}
                                         placeholder="Enter your mobile number"
                                         id="contactNumber"
                                         onChange={(e) =>
@@ -212,12 +223,12 @@ const RecuriterCreation= () => {
                                         {contactNumberError}
                                     </div>
                                 )}
-                                {contactNumber.length >1 && contactNumber.length <10 &&  
-                                 (
-                                    <div className="text-danger">
-                                        Please enter 10 numbers
-                                    </div>
-                                )}
+                                {contactNumber.length > 1 && contactNumber.length < 10 &&
+                                    (
+                                        <div className="text-danger">
+                                            Please enter 10 numbers
+                                        </div>
+                                    )}
                                 {contactNumber && !/^[6-9]/.test(contactNumber) && (
                                     <div className="text-danger">
                                         Mobile number must start with 6, 7, 8, or 9
@@ -230,7 +241,7 @@ const RecuriterCreation= () => {
                                     type="password"
                                     className={`form-control ${passwordError ? "is-invalid" : ""
                                         }`}
-                                    style={{ border: "1px solid #270d44" }}
+                                    style={{ border: "1px solid #270d44", borderRadius: "16px" }}
                                     placeholder="Enter your password"
                                     id="password"
                                     onChange={(e) => setPassword(e.target.value)}
@@ -250,7 +261,7 @@ const RecuriterCreation= () => {
                                     type="password"
                                     className={`form-control ${passwordError ? "is-invalid" : ""
                                         }`}
-                                    style={{ border: "1px solid #270d44" }}
+                                    style={{ border: "1px solid #270d44", borderRadius: "16px" }}
                                     placeholder="Enter your password"
                                     id="password"
                                     onChange={(e) => setconfirmpassword(e.target.value)}
@@ -263,7 +274,7 @@ const RecuriterCreation= () => {
 
                     </div>
                     <div className="col-12 col-md-1"></div>
-                    <div className="col-md-4 mt-5  d-none d-md-block" >
+                    <div className="col-md-4 mt-2  d-none d-md-block" >
                         <div class=" col-12 col-md-8 ">
                             <div class="card card1 shadow" >
                                 <img src="https://img.freepik.com/premium-vector/my-order-list-flat-style-illustration-design_538610-623.jpg"

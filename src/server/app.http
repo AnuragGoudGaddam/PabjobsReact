@@ -63,3 +63,55 @@ Content-Type: application/json
    
 }
 
+
+###
+post http://localhost:3010/headline
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"resumeheadline":"Resume122"
+}
+
+###
+post http://localhost:3010/summery
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"profileSummery":"Resume122"
+}
+
+###
+post http://localhost:3010/keyskill
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"keyskill":"Resume122"
+}
+
+
+###
+post http://localhost:3010/uiandux
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"uitotalEXp":"10 years",
+"uifromdate":"20-01-2020",
+"describeJob":"uideveloper",
+"currentCTC":"4LPA",
+"uitilldate":"28-02-2023"
+}
+
+###
+post http://localhost:3010/education
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"educationDegree":"B-tech",
+"university":"Vaagdevi",
+"educationyear":"2022"
+}
