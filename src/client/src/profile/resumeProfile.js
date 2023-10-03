@@ -29,28 +29,28 @@ const ResumeProfile = () => {
         }
     };
 
-    const handleUpload = () => {
-        if (selectedFile) {
-            const formData = new FormData();
-            formData.append("resume", selectedFile);
+    // const handleUpload = () => {
+    //     if (selectedFile) {
+    //         const formData = new FormData();
+    //         formData.append("resume", selectedFile);
 
-            // You can use axios to upload the file to your server
-            // Replace the URL with your server endpoint
-            axios
-                .post("YOUR_SERVER_UPLOAD_ENDPOINT", formData)
-                .then((response) => {
-                    // Handle the server response here
-                    toast.success("Resume uploaded successfully.");
-                })
-                .catch((error) => {
-                    // Handle any errors here
-                    console.error("Error uploading resume:", error);
-                    toast.error("Error uploading resume. Please try again later.");
-                });
-        } else {
-            toast.warning("Please select a PDF file to upload.");
-        }
-    };
+    //         // You can use axios to upload the file to your server
+    //         // Replace the URL with your server endpoint
+    //         axios
+    //             .post("YOUR_SERVER_UPLOAD_ENDPOINT", formData)
+    //             .then((response) => {
+    //                 // Handle the server response here
+    //                 toast.success("Resume uploaded successfully.");
+    //             })
+    //             .catch((error) => {
+    //                 // Handle any errors here
+    //                 console.error("Error uploading resume:", error);
+    //                 toast.error("Error uploading resume. Please try again later.");
+    //             });
+    //     } else {
+    //         toast.warning("Please select a PDF file to upload.");
+    //     }
+    // };
 
     const onSubmitForm = (e) => {
         e.preventDefault();
@@ -163,7 +163,7 @@ const ResumeProfile = () => {
             axios
                 .post("http://localhost:3010/summery", usersDatak, { headers })
                 .then((response) => {
-                    setdata(response.data);
+                    setdata2(response.data);
                     console.log(response.data)
                     if (response.status === 200) {
                         localStorage.setItem('token', response.data.token)
@@ -254,30 +254,30 @@ const ResumeProfile = () => {
         }
     }
 
-    const [degree, setdegree] = useState('');
+    const [educationDegree, seteducationDegree] = useState('');
     const [university, setuniversity] = useState('');
-    const [educationyear, seteducationyear] = useState([]);
-    const [data4,setdata4]=useState([]);
+    const [educationyear, seteducationyear] = useState('');
+    const [data4, setdata4] = useState([]);
 
 
     const usersDataedu = {
-        degree:degree,
-        university:university,
-        educationyear:educationyear,
+        educationDegree: educationDegree,
+        university: university,
+        educationyear: educationyear,
     }
 
     const onSubmitFormedu = (e) => {
         e.preventDefault();
 
         if (
-          degree,university,educationyear !== ''
+            educationDegree, university, educationyear !== ''
         ) {
             const headers = {
                 token:
                     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
             }
             axios
-                .post("http://localhost:3010/summery", usersDatak, { headers })
+                .post("http://localhost:3010/education", usersDataedu, { headers })
                 .then((response) => {
                     setdata(response.data);
                     console.log(response.data)
@@ -308,6 +308,527 @@ const ResumeProfile = () => {
 
 
 
+    const [projecttitle, setprojecttitle] = useState('');
+    const [projectdescription, setprojectdescription] = useState('');
+    const [projectgithublink, setprojectgithublink] = useState('');
+    const [data5, setdata5] = useState([]);
+
+
+    const usersDataproject = {
+        projecttitle: projecttitle,
+        projectdescription: projectdescription,
+        projectgithublink: projectgithublink,
+    }
+
+    const onSubmitFormeproject = (e) => {
+        e.preventDefault();
+
+        if (
+            projecttitle, projectdescription, projectgithublink !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/education", usersDataproject, { headers })
+                .then((response) => {
+                    setdata5(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+    // accomplishment
+
+    const [worksample, setworksample] = useState('');
+    const [data6, setdata6] = useState([]);
+    const usersDatawork = {
+
+        worksample: worksample,
+
+    }
+
+    const onSubmitFormwork = (e) => {
+        e.preventDefault();
+
+        if (
+            worksample !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/worksample", usersDatawork, { headers })
+                .then((response) => {
+                    setdata2(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+    const [papertitle, setpapertitle] = useState('');
+    const [paperauthor, setpaperauthor] = useState('');
+    const [paperpublicationdate, setpaperpublicationdate] = useState('');
+    const [data7, setdata7] = useState([]);
+
+
+    const usersDatawhitepaper = {
+        papertitle: papertitle,
+        paperauthor: paperauthor,
+        paperpublicationdate: paperpublicationdate,
+    }
+
+    const onSubmitFormpaper = (e) => {
+        e.preventDefault();
+
+        if (
+            papertitle, paperauthor, paperpublicationdate !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/paper", usersDatawhitepaper, { headers })
+                .then((response) => {
+                    setdata5(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+
+    const [preaentationtitle, setpreaentationtitle] = useState('');
+
+    const [presentationspeaker, setpresentationspeaker] = useState('');
+    const [presentiondate, setpresentiondate] = useState('');
+    const [data9, setdata9] = useState([]);
+
+
+    const usersDatepresentation = {
+        preaentationtitle: preaentationtitle,
+        presentationspeaker: presentationspeaker,
+        presentiondate: presentiondate,
+    }
+
+    const onSubmitFormpresentation = (e) => {
+        e.preventDefault();
+
+        if (
+            preaentationtitle, presentationspeaker, presentiondate !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+             
+                .post("http://localhost:3010/Presentation", usersDatepresentation, { headers })
+                .then((response) => {
+                      setdata9(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+
+    const [accpatent, setaccpatent] = useState('');
+    const [data10, setdata10] = useState([]);
+    const usersDataaccpatent = {
+
+        accpatent: accpatent,
+
+    }
+
+    const onSubmitFormaccpatent = (e) => {
+        e.preventDefault();
+
+        if (
+            accpatent !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/patent", usersDataaccpatent, { headers })
+                .then((response) => {
+                    setdata10(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+    // certification
+    const [certificationname, setcertificationname] = useState('');
+
+    const [certificationorganization, setcertificationorganization] = useState('');
+
+    const [certificationdate, setcertificationdate] = useState('');
+
+    const [data11, setdata11] = useState([]);
+
+
+    const usersDatecertification = {
+        certificationname: certificationname,
+        certificationorganization: certificationorganization,
+        certificationdate: certificationdate,
+    }
+
+    const onSubmitFormcertification = (e) => {
+        e.preventDefault();
+
+        if (
+            certificationname, certificationorganization, certificationdate !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/certification", usersDatecertification, { headers })
+                .then((response) => {
+                    setdata9(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+
+    //DesiredCareerProfile
+
+    const [desireindustry, setdesireindustry] = useState('');
+
+    const [desiredesignation, setdesiredesignation] = useState('');
+
+    const [DesiredtoShift, setDesiredtoShift] = useState('');
+
+    const [PreferedLocation, setPreferedLocation] = useState('');
+
+    const [desireExpectedCTC, setdesireExpectedCTC] = useState('');
+
+    const [desireEmploymenttype, setdesireEmploymenttype] = useState('');
+
+    const [data12, setdata12] = useState([]);
+
+
+    const DesiredCareerProfile = {
+        desireindustry: desireindustry,
+        desiredesignation: desiredesignation,
+        DesiredtoShift: DesiredtoShift,
+        PreferedLocation: PreferedLocation,
+        desireExpectedCTC: desireExpectedCTC,
+        desireEmploymenttype: desireEmploymenttype,
+
+    }
+
+    const onSubmitFormDesiredCareerProfile = (e) => {
+        e.preventDefault();
+
+        if (
+            desireindustry,
+            desiredesignation,
+            DesiredtoShift,
+            PreferedLocation,
+            desireExpectedCTC,
+            desireEmploymenttype !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/DesiredCareerProfile", DesiredCareerProfile, { headers })
+                .then((response) => {
+                    setdata9(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+
+    const [DateOfBirth, setDateOfBirth] = useState('');
+
+    const [Age, setAge] = useState('');
+
+    const [Gender, setGender] = useState('');
+
+    const [MaritalStatus, setMaritalStatus] = useState('');
+
+    const [Languages, setLanguages] = useState('');
+
+    const [personalEmploymenttype, setpersonalEmploymenttype] = useState('');
+
+    const [data13, setdata13] = useState([]);
+
+
+    const PersonalDetails = {
+        DateOfBirth: DateOfBirth,
+        Age: Age,
+        Gender: Gender,
+        MaritalStatus: MaritalStatus,
+        Languages: Languages,
+        personalEmploymenttype: personalEmploymenttype,
+
+    }
+
+    const onSubmitFormPersonalDetails = (e) => {
+        e.preventDefault();
+
+        if (
+            DateOfBirth, Age, Gender, MaritalStatus, Languages, personalEmploymenttype !== ''
+        ) {
+            const headers = {
+                token:
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc"
+            }
+            axios
+                .post("http://localhost:3010/PersonalDetails", PersonalDetails, { headers })
+                .then((response) => {
+                    setdata13(response.data);
+                    console.log(response.data)
+                    if (response.status === 200) {
+                        localStorage.setItem('token', response.data.token)
+                        console.log(response.data.token);
+
+                        toast.success("Registration Successfull", {
+                            position: "top-right",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored"
+                        });
+                        setTimeout(function () {
+
+                        }, 3000)
+                    }
+                })
+        }
+        else {
+            toast.warning("Enter the Required Details");
+        }
+    }
+
+    const [file, setFile] = useState(null);
+
+    const handleFileChange1 = (e) => {
+      const selectedFile = e.target.files[0];
+      if (selectedFile && selectedFile.size <= 2000000) { // Check if file size is less than 2 MB
+        setFile(selectedFile);
+      } else {
+        alert("Please select a PDF file less than 2MB.");
+      }
+    };
+  
+    // const handleUpload = async () => {
+    //   if (file) {
+    //     const formData = new FormData();
+    //     formData.append("pdf", file);
+  
+    //     try {
+    //       const response = await fetch("/upload", {
+    //         method: "POST",
+    //         body: formData,
+    //       });
+  
+    //       if (response.status === 200) {
+    //         alert("PDF uploaded successfully.");
+    //       } else {
+    //         alert("Failed to upload PDF.");
+    //       }
+    //     } catch (error) {
+    //       console.error("Error uploading PDF:", error);
+    //     }
+    //   } else {
+    //     alert("Please select a PDF file first.");
+    //   }
+    // }
+
+    const handleUpload = async () => {
+        console.log("Upload button clicked");
+      
+        if (file) {
+          console.log("File selected:", file);
+      
+          const formData = new FormData();
+          formData.append("pdf", file);
+      
+          try {
+            const response = await fetch("/upload", {
+              method: "POST",
+              
+              body: formData,
+            });
+      
+            console.log("Response status:", response.status);
+      
+            if (response.status === 200) {
+              alert("PDF uploaded successfully.");
+            } else {
+              const data = await response.json();
+              console.error("Error response:", data);
+              alert(`Failed to upload PDF. Error: ${data.message}`);
+            }
+          } catch (error) {
+            console.error("Error uploading PDF:", error);
+            alert("Error uploading PDF. Please try again later.");
+          }
+        } else {
+          alert("Please select a PDF file first.");
+        }
+      };
+      
 
     return (
         <div>
@@ -347,38 +868,37 @@ const ResumeProfile = () => {
                                 <div className="col-8" style={{ fontSize: 'small' }}><p>Profile Last Updated-june5th 2023</p></div>
                             </div>
                         </div>
-                        <div className="mt-1"> <button className="form-control">Resume</button></div>
-                        <div className="mt-1"> <button className="form-control">Resume Headline</button></div>
-                        <div className="mt-1"> <button className="form-control">Profile Summary</button></div>
-                        <div className="mt-1"> <button className="form-control">Key Skills</button></div>
+                        <a href="#uploadresume"><div className="mt-1"> <button className="form-control">Resume</button></div></a>
+                       <a href="#ResumeHeadline">  <div className="mt-1"> <button className="form-control">Resume Headline</button></div></a>
+                      <a href="">  <div className="mt-1"> <button className="form-control">Profile Summary</button></div></a>
+                      <a href="#keyskill">  <div className="mt-1"> <button className="form-control">Key Skills</button></div></a>
                         <div className="mt-1"> <button className="form-control">Employment</button></div>
                         <div className="mt-1"> <button className="form-control"> Eduction</button></div>
                         <div className="mt-1"> <button className="form-control"> Projects</button></div>
                         <div className="mt-1"> <button className="form-control"> Accomplishment</button></div>
                         <div className="mt-1"> <button className="form-control"> Desired Career </button></div>
-                        <div className="mt-1"> <button className="form-control"> Desired Career </button></div>
+                      <a href="#Desiredprofile"> <div className="mt-1"> <button className="form-control"> Desired Career </button></div> </a> 
                     </div>
                     <div className="col-md-6 mt-1">
-                        <div className="p-4 shadow card">
-                            <p><span style={{ fontWeight: "bold" }}>Resume  </span>(Recruiters generally do not look at profile without resumes.)</p>
-                            <label htmlFor="fileInput" className="btn btn-primary">
-                                Upload Resume <i className="fa-solid fa-upload"></i>
-                            </label>
+                     
+
+                        <div className="  p-4 shadow card" id="uploadresume">
+                            <p>
+                                <span style={{ fontWeight: "bold" }}>Resume </span>
+                                (Recruiters generally do not look at profiles without resumes.)
+                            </p>
                             <input
                                 type="file"
-                                id="fileInput"
                                 accept=".pdf"
-                                style={{ display: "none" }} // Hide the input element
-                                onChange={handleFileChange}
+                                style={{ display: "none" }}
+                                onChange={handleFileChange1}
+                                id="fileInput"
                             />
+                            <label htmlFor="fileInput" className="btn btn-primary">
+                                Upload Resume
+                                <i className="fa-solid fa-upload"></i>
+                            </label>
                             <button onClick={handleUpload}>Upload Resume</button>
-                        </div>
-
-                        <div className="row">
-                            <div className="col-md-3"></div>
-                            <div className="col-md-6">
-                                <p>Supported Formats: PDF up to 5MB</p>
-                            </div>
                         </div>
 
 
@@ -477,7 +997,7 @@ const ResumeProfile = () => {
                             </div>
                         </section>
 
-                        <section className="mt-3 p-4 card shadow">
+                        <section id=""  className= " mt-3 p-4 card shadow">
                             <div className="">
                                 <div className=" " id="">
                                     <div className=" d-flex flex-row">
@@ -569,7 +1089,7 @@ const ResumeProfile = () => {
                         </section>
                         {/* key Skills */}
 
-                        <section id="headline">
+                        <section id="keyskill">
                             <div class="card p-4 mt-3 shadow">
                                 <div id="ResumeHeadline">
                                     <div class="d-flex flex-row">
@@ -686,7 +1206,7 @@ const ResumeProfile = () => {
                         </section>
 
                         {/* Employment */}
-                        <section id="headline">
+                        <section id="Employment">
                             <div class="card p-4 mt-3 shadow">
                                 <div id="ResumeHeadline">
                                     <div class="d-flex flex-row">
@@ -750,7 +1270,7 @@ const ResumeProfile = () => {
                                                                                 </div>
 
                                                                                 <label className="mt-1">Started Working From</label><br></br>
-                                                                                <input type="date" onChange={(e)=> setuifromdate(e.target.value)}  value={uifromdate} />
+                                                                                <input type="date" onChange={(e) => setuifromdate(e.target.value)} value={uifromdate} />
                                                                                 <br>
                                                                                 </br>
                                                                                 <br></br>
@@ -760,13 +1280,13 @@ const ResumeProfile = () => {
                                                                                     role=""
                                                                                     rows={4}
                                                                                     cols={20}
-                                                                                    onChange={(e)=>  setdescribeJob(e.target.value)} value={describeJob}
+                                                                                    onChange={(e) => setdescribeJob(e.target.value)} value={describeJob}
                                                                                 >
                                                                                 </textarea>
                                                                             </div>
                                                                             <div className="col-md-6">
                                                                                 <label>Current CTC </label><br></br>
-                                                                                <input type="text " placeholder="Current CTC" onChange={(e)=> setcurrentCTC(e.target.value)}  value={currentCTC}/> <br></br>
+                                                                                <input type="text " placeholder="Current CTC" onChange={(e) => setcurrentCTC(e.target.value)} value={currentCTC} /> <br></br>
                                                                                 <br></br>
                                                                                 <label>Your Organization Category</label> <br></br>
                                                                                 <select>
@@ -776,7 +1296,7 @@ const ResumeProfile = () => {
                                                                                 </br>
                                                                                 <br></br>
                                                                                 <label className="mt-4"> Worked Till now</label><br></br>
-                                                                                <input type="date" onChange={(e) =>setuitilldate(e.target.value)} value={uitilldate} />
+                                                                                <input type="date" onChange={(e) => setuitilldate(e.target.value)} value={uitilldate} />
 
                                                                             </div>
 
@@ -787,7 +1307,7 @@ const ResumeProfile = () => {
                                                                                 type="submit"
                                                                                 class="btn btn-danger"
                                                                                 data-bs-dismiss="modal"
-                                                                              onClick={(e) => onSubmitFormui(e)}
+                                                                                onClick={(e) => onSubmitFormui(e)}
                                                                             >
                                                                                 Save
                                                                             </button>
@@ -812,7 +1332,7 @@ const ResumeProfile = () => {
 
 
                         {/* Education */}
-                        <section id="headline">
+                        <section id="Education">
                             <div class="card p-4 mt-3 shadow">
                                 <div id="ResumeHeadline">
                                     <div class="d-flex flex-row">
@@ -876,20 +1396,20 @@ const ResumeProfile = () => {
                                                                         {/* <!-- Modal footer --> */}
 
                                                                         <label>Degree : </label>
-                                                                        <input type="text" onChange={(e)=> setdegree(e.target.value) } value={degree} /> <br></br>
+                                                                        <input type="text" onChange={(e) => seteducationDegree(e.target.value)} value={educationDegree} /> <br></br>
                                                                         <br></br>
 
                                                                         <label>Univesity :</label>
-                                                                        <input type="text"  onChange={(e)=> setuniversity(e.target.value) } value={university} /> <br></br>
+                                                                        <input type="text" onChange={(e) => setuniversity(e.target.value)} value={university} /> <br></br>
                                                                         <br></br>
                                                                         <label>Year :</label>
-                                                                        <input type="text"  onChange={(e)=> seteducationyear(e.target.value) } value={educationyear} /> <br></br>
+                                                                        <input type="text" onChange={(e) => seteducationyear(e.target.value)} value={educationyear} /> <br></br>
                                                                         <div class="modal-footer">
                                                                             <button
                                                                                 type="submit"
                                                                                 class="btn btn-danger"
                                                                                 data-bs-dismiss="modal"
-                                                                              onClick={(e) => onSubmitFormedu(e)}
+                                                                                onClick={(e) => onSubmitFormedu(e)}
                                                                             >
                                                                                 Save
                                                                             </button>
@@ -977,14 +1497,14 @@ const ResumeProfile = () => {
 
 
                                                                         <label>Title : </label>
-                                                                        <input type="text" /> <br></br>
+                                                                        <input type="text" onChange={(e) => setprojecttitle(e.target.value)} value={projecttitle} /> <br></br>
                                                                         <br></br>
 
                                                                         <label>Description :</label>
-                                                                        <input type="text" /> <br></br>
+                                                                        <input type="text" onChange={(e) => setprojectdescription(e.target.value)} value={projectdescription} /> <br></br>
                                                                         <br></br>
                                                                         <label>Github link :</label>
-                                                                        <input type="text" /> <br></br>
+                                                                        <input type="text" onChange={(e) => setprojectgithublink(e.target.value)} value={projectgithublink} /> <br></br>
 
                                                                         {/* <!-- Modal footer --> */}
                                                                         <div class="modal-footer">
@@ -992,7 +1512,7 @@ const ResumeProfile = () => {
                                                                                 type="submit"
                                                                                 class="btn btn-danger"
                                                                                 data-bs-dismiss="modal"
-                                                                            //   onClick={(e) => onSubmitForm1(e)}
+                                                                                onClick={(e) => onSubmitFormeproject(e)}
                                                                             >
                                                                                 Save
                                                                             </button>
@@ -1058,7 +1578,7 @@ const ResumeProfile = () => {
                                                                 <label className="heading211">
                                                                     Work Sample
                                                                 </label> <br></br>
-                                                                <input type="text" />
+                                                                <input type="text" onChange={(e) => setworksample(e.target.value)} value={worksample} />
 
 
                                                                 {/* <!-- Modal footer --> */}
@@ -1067,7 +1587,7 @@ const ResumeProfile = () => {
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormwork(e)}
                                                                     >
                                                                         Save
                                                                     </button>
@@ -1081,7 +1601,7 @@ const ResumeProfile = () => {
                                     </div>
                                     <hr></hr>
                                 </div>
-                                <div id="ResumeHeadline">
+                                <div id="paper">
                                     <div class="d-flex flex-row">
                                         <div>
                                             <h5 className="col-12">White paper / Reaearch publication</h5>
@@ -1104,7 +1624,7 @@ const ResumeProfile = () => {
                                                     <div class="modal-content">
                                                         {/* <!-- Modal Header --> */}
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Resume Headline</h4>
+                                                            <h4 class="modal-title">White paper / Reaearch publication</h4>
                                                             <button
                                                                 type="button"
                                                                 class="btn-close"
@@ -1116,13 +1636,13 @@ const ResumeProfile = () => {
                                                         <div class="modal-body ">
                                                             <div>
                                                                 <label>Title :</label>
-                                                                <input type="text" /><br></br>
+                                                                <input type="text" onChange={(e) => setpapertitle(e.target.value)} value={papertitle} /><br></br>
                                                                 <br></br>
                                                                 <label>Author :</label>
-                                                                <input type="text" /><br></br>
+                                                                <input type="text" onChange={(e) => setpaperauthor(e.target.value)} value={paperauthor} /><br></br>
                                                                 <br></br>
                                                                 <label>publication Date :</label>
-                                                                <input type="date" /><br></br>
+                                                                <input type="date" onChange={(e) => setpaperpublicationdate(e.target.value)} value={paperpublicationdate} /><br></br>
 
 
                                                                 {/* <!-- Modal footer --> */}
@@ -1131,7 +1651,7 @@ const ResumeProfile = () => {
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormpaper(e)}
                                                                     >
                                                                         Save
                                                                     </button>
@@ -1145,7 +1665,7 @@ const ResumeProfile = () => {
                                     </div>
                                     <hr></hr>
                                 </div>
-                                <div id="ResumeHeadline">
+                                <div id="Presentation">
                                     <div class="d-flex flex-row">
                                         <div className="row" >
                                             <h5 className="col-12" >Presentation</h5>
@@ -1180,20 +1700,20 @@ const ResumeProfile = () => {
                                                         <div class="modal-body ">
                                                             <div>
                                                                 <label>Title :</label>
-                                                                <input type="text" /><br></br>
+                                                                <input type="text" onChange={(e) => setpreaentationtitle(e.target.value)} value={preaentationtitle} /><br></br>
                                                                 <br></br>
                                                                 <label>Speaker :</label>
-                                                                <input type="text" /><br></br>
+                                                                <input type="text" onChange={(e) => setpresentationspeaker(e.target.value)} value={presentationspeaker} /><br></br>
                                                                 <br></br>
                                                                 <label> Date :</label>
-                                                                <input type="date" /><br></br>
+                                                                <input type="date" onChange={(e) => setpresentiondate(e.target.value)} value={presentiondate} /><br></br>
 
                                                                 <div class="modal-footer">
                                                                     <button
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormpresentation(e)}
                                                                     >
                                                                         Save
                                                                     </button>
@@ -1207,7 +1727,7 @@ const ResumeProfile = () => {
                                     </div>
                                     <hr></hr>
                                 </div>
-                                <div id="ResumeHeadline">
+                                <div id="Patent">
                                     <div class="d-flex flex-row">
                                         <div className="row">
                                             <h5 className="col-12">Patent</h5>
@@ -1245,7 +1765,7 @@ const ResumeProfile = () => {
                                                                     Patent
                                                                 </label>
                                                                 <br />
-                                                                <input type="text" />
+                                                                <input type="text" onChange={(e) => setaccpatent(e.target.value)} value={accpatent} />
 
                                                                 {/* <!-- Modal footer --> */}
                                                                 <div class="modal-footer">
@@ -1253,7 +1773,7 @@ const ResumeProfile = () => {
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormaccpatent(e)}
                                                                     >
                                                                         Save
                                                                     </button>
@@ -1267,7 +1787,7 @@ const ResumeProfile = () => {
                                     </div>
                                     <hr></hr>
                                 </div>
-                                <div id="ResumeHeadline">
+                                <div id="certification">
                                     <div class="d-flex flex-row">
                                         <div className="row">
                                             <h5 className="col-12">Certification</h5>
@@ -1302,14 +1822,14 @@ const ResumeProfile = () => {
                                                         <div class="modal-body ">
                                                             <div>
                                                                 <label>Name : </label>
-                                                                <input type="text" /> <br></br>
+                                                                <input type="text" onChange={(e) => setcertificationname(e.target.value)} value={certificationname} /><br></br>
                                                                 <br></br>
 
                                                                 <label>Organization :</label>
-                                                                <input type="text" /> <br></br>
+                                                                <input type="text" onChange={(e) => setcertificationorganization(e.target.value)} value={certificationorganization} /><br></br>
                                                                 <br></br>
                                                                 <label>Date :</label>
-                                                                <input type="date" /> <br></br>
+                                                                <input type="date" onChange={(e) => setcertificationdate(e.target.value)} value={certificationdate} /> <br></br>
 
                                                                 {/* <!-- Modal footer --> */}
                                                                 <div class="modal-footer">
@@ -1317,7 +1837,7 @@ const ResumeProfile = () => {
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormcertification(e)}
                                                                     >
                                                                         Save
                                                                     </button>
@@ -1335,7 +1855,8 @@ const ResumeProfile = () => {
                             </div>
                         </section>
 
-                        <section id="headline">
+                        {/* DesiredCareerProfile */}
+                        <section id="Desiredprofile">
                             <div class="card p-4 mt-3 shadow">
                                 <div id="ResumeHeadline">
                                     <div class="d-flex flex-row">
@@ -1370,24 +1891,24 @@ const ResumeProfile = () => {
                                                                 <div className="row">
                                                                     <div className="col-md-6">
                                                                         <label>Desire Industry</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Desire Industry" />
+                                                                        <input type="text" placeholder="Enter Desire Industry" onChange={(e) => setdesireindustry(e.target.value)} value={desireindustry} />
                                                                         <br></br>
                                                                         <label>Designation</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Desigantion" />
+                                                                        <input type="text" placeholder="Enter Desigantion" onChange={(e) => setdesiredesignation(e.target.value)} value={desiredesignation} />
                                                                         <br></br>
                                                                         <label>Desired to Shift</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Day/night" />
+                                                                        <input type="text" placeholder="Enter Day/night" onChange={(e) => setDesiredtoShift(e.target.value)} value={DesiredtoShift} />
                                                                         <br></br>
                                                                     </div>
                                                                     <div className="col-md-6">
                                                                         <label>Prefered Location</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Prefered location" />
+                                                                        <input type="text" placeholder="Enter Prefered location" onChange={(e) => setPreferedLocation(e.target.value)} value={PreferedLocation} />
                                                                         <br></br>
                                                                         <label>Expected CTC</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Expected CTC" />
+                                                                        <input type="text" placeholder="Enter Expected CTC" onChange={(e) => setdesireExpectedCTC(e.target.value)} value={desireExpectedCTC} />
                                                                         <br></br>
                                                                         <label>Employment type</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Employment type " />
+                                                                        <input type="text" placeholder="Enter Employment type " onChange={(e) => setdesireEmploymenttype(e.target.value)} value={desireEmploymenttype} />
                                                                         <br></br>
                                                                     </div>
 
@@ -1398,7 +1919,7 @@ const ResumeProfile = () => {
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormDesiredCareerProfile(e)}
                                                                     >
                                                                         Save
                                                                     </button>
@@ -1456,6 +1977,7 @@ const ResumeProfile = () => {
                             </div>
                         </section>
 
+                        {/* PersonalDetails  */}
                         <section id="headline">
                             <div class="card p-4 mt-3 shadow">
                                 <div id="ResumeHeadline">
@@ -1491,25 +2013,26 @@ const ResumeProfile = () => {
                                                                 <div className="row">
                                                                     <div className="col-md-6">
                                                                         <label>Date Of Birth</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Date of Birth" />
+                                                                        <input type="text" placeholder="Enter Date of Birth" onChange={(e) => setDateOfBirth(e.target.value)} value={DateOfBirth} />
                                                                         <br></br>
                                                                         <label>Age</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Age" />
+                                                                        <input type="text" placeholder="Enter Age" onChange={(e) => setAge(e.target.value)} value={Age} />
                                                                         <br></br>
                                                                         <label>Gender</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Gender" />
+                                                                        <input type="text" placeholder="Enter Gender" onChange={(e) => setGender(e.target.value)} value={Gender} />
                                                                         <br></br>
                                                                     </div>
                                                                     <div className="col-md-6">
                                                                         <label>Marital Status</label> <br></br>
-                                                                        <input type="text" placeholder="Enter Marital Status" />
+                                                                        <input type="text" placeholder="Enter Marital Status" onChange={(e) => setMaritalStatus(e.target.value)} value={MaritalStatus} />
                                                                         <br></br>
                                                                         <label>Languages </label> <br></br>
-                                                                        <input type="text" placeholder="Enter Languages" />
+                                                                        <input type="text" placeholder="Enter Languages" onChange={(e) => setLanguages(e.target.value)} value={Languages} />
                                                                         <br></br>
                                                                         <label>Employment type</label> <br></br>
                                                                         <textarea cols={25}
                                                                             rows={3}
+                                                                            onChange={(e) => setpersonalEmploymenttype(e.target.value)} value={personalEmploymenttype}
                                                                         ></textarea>
                                                                         <br></br>
                                                                     </div>
@@ -1522,7 +2045,7 @@ const ResumeProfile = () => {
                                                                         type="submit"
                                                                         class="btn btn-danger"
                                                                         data-bs-dismiss="modal"
-                                                                    //   onClick={(e) => onSubmitForm1(e)}
+                                                                        onClick={(e) => onSubmitFormPersonalDetails(e)}
                                                                     >
                                                                         Save
                                                                     </button>

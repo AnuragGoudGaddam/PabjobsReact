@@ -14,5 +14,5 @@ module.exports= function (req,res,next){
     catch(e){
         console.log(e);
         return resizeBy.status(500).json("inernal server error")
-    } 
+    }  
 }

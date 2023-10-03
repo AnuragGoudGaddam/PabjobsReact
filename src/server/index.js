@@ -7,6 +7,10 @@ const middleware = require('./middleware')
 const jwt=require('jsonwebtoken')
 const bcrypt=require('bcrypt');
 const resumeData = require("./scemap");
+// const multer = require("multer");
+// const path = require("path");
+// const fs= require('fs')
+
 
 const app = express();
 app.use(express.json())
@@ -380,6 +384,280 @@ app.post ("/education" ,middleware, async(req,res) =>{
     }
 
 } );
+
+app.post ("/project" ,middleware, async(req,res) =>{
+    try {
+        const {projecttitle,projectdescription,projectgithublink} = req.body
+
+        let newUser= new resumeData({
+            projecttitle : projecttitle,
+            projectdescription:projectdescription,
+            projectgithublink:projectgithublink,
+
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({projecttitle:projecttitle})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+app.post ("/worksample" ,middleware, async(req,res) =>{
+    try {
+        const {worksample} = req.body
+
+        let newUser= new resumeData({
+            worksample : worksample,
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({worksample:worksample})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+app.post ("/paper" ,middleware, async(req,res) =>{
+    try {
+        const {papertitle,paperauthor,paperpublicationdate} = req.body
+
+        let newUser= new resumeData({
+            papertitle : papertitle,
+            paperauthor:paperauthor,
+            paperpublicationdate:paperpublicationdate,
+
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({papertitle:papertitle})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+app.post ("/Presentation" ,middleware, async(req,res) =>{
+    try {
+        const {preaentationtitle,presentationspeaker,presentiondate} = req.body
+
+        let newUser= new resumeData({
+            preaentationtitle : preaentationtitle,
+            presentationspeaker:presentationspeaker,
+            presentiondate:presentiondate,
+
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({preaentationtitle:preaentationtitle})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+app.post ("/patent" ,middleware, async(req,res) =>{
+    try {
+        const {accpatent} = req.body
+
+        let newUser= new resumeData({
+            accpatent : accpatent,
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({accpatent:accpatent})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+app.post ("/certification" ,middleware, async(req,res) =>{
+    try {
+        const {certificationname,certificationorganization,certificationdate} = req.body
+
+        let newUser= new resumeData({
+            certificationname : certificationname,
+            certificationorganization:certificationorganization,
+            certificationdate:certificationdate,
+
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({certificationname:certificationname})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+app.post ("/DesiredCareerProfile" ,middleware, async(req,res) =>{
+    try {
+        const {desireindustry,desiredesignation,DesiredtoShift,PreferedLocation,desireExpectedCTC,desireEmploymenttype } = req.body
+
+        let newUser= new resumeData({
+            desireindustry : desireindustry,
+            desiredesignation:desiredesignation,
+            DesiredtoShift:DesiredtoShift,
+            PreferedLocation : PreferedLocation,
+            desireExpectedCTC:desireExpectedCTC,
+            desireEmploymenttype:desireEmploymenttype,
+
+
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({desireindustry:desireindustry})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+app.post ("/PersonalDetails" ,middleware, async(req,res) =>{
+    try {
+        const {DateOfBirth,Age,Gender,MaritalStatus,Languages,personalEmploymenttype } = req.body
+
+        let newUser= new resumeData({
+            DateOfBirth : DateOfBirth,
+            Age:Age,
+            Gender:Gender,
+            MaritalStatus : MaritalStatus,
+            Languages:Languages,
+            personalEmploymenttype:personalEmploymenttype,
+
+
+        }
+
+        )
+        const isUserExit= await resumeData.findOne({DateOfBirth:DateOfBirth})
+
+        if (isUserExit) {
+            return res.send("user already registered")
+            
+        }
+
+        newUser.save();
+        return res.send("user created sucessfully")
+    }
+    catch(e){
+        console.log(e.message)
+        res.send ("internal server error")
+    }
+
+} );
+
+// mongoose.connect("mongodb://localhost:27017/your-database-name", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// const pdfSchema = new mongoose.Schema({
+//   filename: String,
+//   data: Buffer,
+// });
+
+// const PdfModel = mongoose.model("Pdf", pdfSchema);
+
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads/"); // Specify the directory where uploaded files will be stored
+//   },
+//   filename: function (req, file, cb) {
+//     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+//     cb(null, uniqueSuffix + path.extname(file.originalname)); // Rename the uploaded file with a unique name
+//   },
+// });
+
+// const upload = multer({ storage });
+
+// app.post("/uploadpdf", upload.single("pdf"), async (req, res) => {
+//   try {
+//     if (!req.file) {
+//       return res.status(400).json({ message: "No file uploaded" });
+//     }
+
+//     const pdf = new PdfModel({
+//       filename: req.file.filename,
+//       data: req.file.buffer,
+//     });
+
+//     await pdf.save();
+
+//     res.status(200).json({ message: "PDF uploaded successfully" });
+//   } catch (error) {
+//     console.error("Error uploading PDF:", error);
+//     res.status(500).json({ message: "Failed to upload PDF" });
+//   }
+// });
+
 
 
 

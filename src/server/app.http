@@ -115,3 +115,107 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2Fl
 "university":"Vaagdevi",
 "educationyear":"2022"
 }
+###
+post http://localhost:3010/project
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"projecttitle":"perfex12",
+"projectdescription":"pabjobsra",
+"projectgithublink":"project@github.com"
+}
+
+###
+post http://localhost:3010/worksample
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"worksample":"Resume122"
+}
+
+###
+post http://localhost:3010/paper
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"papertitle":"perfex12",
+"paperauthor":"pabjobsra",
+"paperpublicationdate":"project@github.com"
+}
+
+###
+post http://localhost:3010/Presentation
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"preaentationtitle":"perfex12",
+"presentationspeaker":"pabjobsra",
+"presentiondate":"project@github.com"
+}
+
+###
+post http://localhost:3010/patent
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"accpatent":"Resume122"
+}
+
+###
+post http://localhost:3010/certification
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"certificationname":"perfex12",
+"certificationorganization":"pabjobsra",
+"certificationdate":"project@github.com"
+}
+
+
+###
+post http://localhost:3010/DesiredCareerProfile
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"desireindustry":"perfex1222",
+"desiredesignation":"pabjobsra",
+"DesiredtoShift":"project@github.com",
+"PreferedLocation":"perfex12",
+"desireExpectedCTC":"pabjobsra",
+"desireEmploymenttype":"project@github.com"
+}
+
+###
+post http://localhost:3010/PersonalDetails
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+{
+"DateOfBirth":"06.01.19939",
+"Age":"21",
+"Gender":"project@github.com",
+"MaritalStatus":"perfex12",
+"Languages":"pabjobsra",
+"personalEmploymenttype":"project@github.com"
+}
+
+
+# ###
+# POST http://localhost:3010/uploadpdf
+# Content-Type: multipart/form-data
+# token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRmOTZkYThkMzNmYjk2Y2FlOTcwZmM1IiwiaWF0IjoxNjk0Nzc4NzU5LCJleHAiOjYyOTQ3Nzg3NTl9.k1xMr8HbrE_B4H-l-btruArBFT5ohmrNSzTMbPaJUEc
+
+# --Boundary
+# Content-Disposition: form-data; name="pdf"; filename="V. Sai Ram (2).pdf"
+# Content-Type: application/pdf
+
+# https://chat.openai.com/c/14671fb0-2c3f-46ed-90e8-cfb14058c172
+# --Boundary--
+
